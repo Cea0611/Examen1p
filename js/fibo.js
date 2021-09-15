@@ -1,13 +1,25 @@
-var limit = parseInt(prompt("Escriba el límite: "));
 
-function fibonacci(numero)
-    {
-        let numeros=[0,1];
-        for (let i = 2; i < numero; i++) {
-            numeros[i] = numeros[i - 2] + numeros[i - 1];
+
+function secfibo() {
+    var i = 0;
+    var n = document.getElementById("n").value;
+
+    var arreglo = [];
+    n = parseInt(n);
+
+    for (i; i < n; i++) {
+        if (i == 0) {
+            arreglo.push(0);
+        } else if (i == 1) {
+
+            arreglo.push(1);
+
+        } else {
+            arreglo.push(arreglo[i - 1] + arreglo[i - 2]);
         }
-        return numeros;
     }
- 
-    // Ejecutamos la función pasándole como parámetro el numero 
-    document.write(fibonacci(limit)); // 0,1,1,2,3,5,8,13,21,34
+
+    document.getElementById("resultado").innerHTML = "<h3>" + arreglo + "</h3>";
+
+}
+
